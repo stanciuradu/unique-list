@@ -1,0 +1,14 @@
+.add-unique-form form input{
+    margin-right: 2rem;
+    padding: 2vh;
+    border-top: 1vh solid red;
+    border-left: 1vh solid blue;
+    border-right: 1vh solid yellow;
+    color: brown;
+    font-size: 1.5vh;
+    font-family: 'Luxurious Roman', cursive;
+}
+.add-unique-form h3{
+    font-family: 'Luxurious Roman', cursive;
+    color: honeydew;
+}

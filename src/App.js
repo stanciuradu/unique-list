@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React, { Component } from "react";
+import AddUniqueForm from "./components/AddUniqueForm";
+import UniqueList from "./components/UniqueList";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      uniques: [],
+    };
+  }
+  // adaugarea unui item unic pe ecran
+  // pentru kodificarea partiala a state-ului folosesc functia prevState
+  updateUniques(newUnique) {
+    this.setState((prevState) => {
+      return {
+        uniques: [...prevState.uniques, newUnique],
+      };
+    });
+  }
+  deletUniques(uniques) {
+    this.setState({ uniques: [] });
+  }
+  render() {
+    return (
+      <div className="App">
+        {/* pasarea functiei catre componenta de form ca props */}
+        <AddUniqueForm
+          updateUniques={(unique) => this.updateUniques(unique)}
+          deletUniques={(uniques) => this.deletUniques(uniques)}
+        />
+        <UniqueList uniques={this.state.uniques} />
+      </div>
+    );
+  }
 }
 
 export default App;
