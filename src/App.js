@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import AddUniqueForm from "./components/AddUniqueForm";
-import UniqueList from "./components/UniqueList";
+import AddUniqueForm from "./components/AddUniqueForm/AddUniqueForm";
+import UniqueList from "./components/UniqueList/UniqueList";
 import './App.css';
 
 export class App extends Component {

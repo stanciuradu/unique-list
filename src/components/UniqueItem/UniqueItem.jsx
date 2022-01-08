@@ -1,6 +1,6 @@
 // componenta simpla pentru afisarea unui uniqueItem care are doar un singur props
 import React from "react";
-import '../components/UniqueItem.css';
+import '../UniqueItem/UniqueItem.css';
 
 function UniqueItem(props) {
   const { text } = props;

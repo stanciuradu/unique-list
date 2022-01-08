@@ -1,6 +1,6 @@
 // formular cu un input si trei butoane->deci este o clasa deaorece state-ul initial al inputului este un string gol initial
 import React, { Component } from "react";
-import "../components/AddUniqueForm.css";
+import "../AddUniqueForm/AddUniqueForm.css";
 
 export class AddUniqueForm extends Component {
   constructor() {
