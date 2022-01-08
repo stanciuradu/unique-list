@@ -9,27 +9,34 @@ export class AddUniqueForm extends Component {
       text: "",
     };
   }
+
   // actualizarea state-ului din input
   handleUpdateText(event) {
     const newText = event.target.value;
     this.setState({ text: newText });
   }
+
   //crearea unei functii pentru submiterea formularului
   handleUpdateUniqueList(event) {
     // functia de prevenire a comportamentului default a formularului
     event.preventDefault();
+    // crearea unui item unic
     const unique = {
       text: this.state.text,
     };
+    // apelarea functiei de updateUniqueList care este pasata ca props din App.js
     this.props.updateUniques(unique);
     // resetarea state-ului dupa apasarea butonului
     this.setState({
       text: "",
     });
   }
+
+  // apelarea functiei de stergere a intregii liste, fiind la fel, pasata ca si props din App.js
   handleDeletUniquesList(uniques) {
     this.props.deletUniques(uniques);
   }
+
   render() {
     console.log(this.state);
     return (
